@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm renders the component properly 1`] = `
+<div>
+  <form><input type="text"> <button type="submit">Find Weather</button></form>
+</div>
+`;

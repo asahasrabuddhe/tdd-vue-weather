@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display renders the component properly 1`] = `
+<div>
+  <div class="weather">
+    <p class="city">Pune</p>
+    <p class="temp">29.87</p>
+    <p class="pressure">1010</p>
+    <p class="humidity">39</p>
+    <p class="wind"></p>
+  </div>
+</div>
+`;

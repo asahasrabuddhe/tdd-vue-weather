@@ -13,22 +13,22 @@ export default {
     ],
     base: "model",
     main: {
-        temp: 82.56,
-        pressure: 1013,
-        humidity: 46,
-        temp_min: 82.56,
-        temp_max: 82.56,
-        sea_level: 1013,
-        grnd_level: 941.72
+        temp: 29.87,
+        pressure: 1010,
+        humidity: 39,
+        temp_min: 29.87,
+        temp_max: 29.87,
+        sea_level: 1010,
+        grnd_level: 938.81
     },
     wind: {
-        speed: 12.87,
-        deg: 92
+        speed: 4.762,
+        deg: 83
     },
     clouds: {
         all: 0
     },
-    dt: 1571120933,
+    dt: 1571124761,
     sys: {
         country: "IN",
         sunrise: 1571101083,

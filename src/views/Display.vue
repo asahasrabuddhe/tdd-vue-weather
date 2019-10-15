@@ -1,6 +1,12 @@
 <template>
     <div>
-        Display
+        <div class="weather">
+            <p class="city">{{weather.name}}</p>
+            <p class="temp">{{weather.main.temp}}</p>
+            <p class="pressure">{{weather.main.pressure}}</p>
+            <p class="humidity">{{weather.main.humidity}}</p>
+            <p class="wind"></p>
+        </div>
     </div>
 </template>
 
@@ -11,7 +17,6 @@
             weather: {
                 type: Object,
                 required: true,
-                default: () => ({})
             }
         }
     }
