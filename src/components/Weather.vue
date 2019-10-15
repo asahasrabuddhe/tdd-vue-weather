@@ -1,7 +1,7 @@
 <template>
     <div>
         Weather
-        <SearchForm/>
+        <SearchForm @submit="findWeather"/>
         <Display :weather="weather"/>
     </div>
 </template>
@@ -18,6 +18,11 @@
             ...mapState({
                 weather: 'weather'
             })
+        },
+        methods: {
+            findWeather(city) {
+                this.$store.dispatch('FIND_WEATHER', {city})
+            }
         }
     }
 </script>

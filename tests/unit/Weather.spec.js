@@ -1,3 +1,4 @@
+jest.mock('@/store/actions')
 import Weather from '@/components/Weather';
 import {createLocalVue, shallowMount} from '@vue/test-utils';
 import SearchForm from '@/views/SearchForm';
@@ -5,6 +6,7 @@ import Display from '@/views/Display';
 import initialState from '@/store/state'
 import Vuex from 'vuex'
 import weatherData from './data/weather'
+import actions from '@/store/actions'
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -15,7 +17,7 @@ describe('Weather', () => {
     const build = () => {
         const wrapper = shallowMount(Weather, {
             localVue,
-            store: new Vuex.Store({state})
+            store: new Vuex.Store({state, actions})
         })
 
         return {
@@ -26,6 +28,7 @@ describe('Weather', () => {
     }
 
     beforeEach(() => {
+        jest.resetAllMocks()
         state = {...initialState}
     })
 
@@ -47,5 +50,15 @@ describe('Weather', () => {
         const {display} = build()
 
         expect(display().vm.weather).toBe(state.weather)
+    })
+
+    it('finds the weather for the city when form is submitted', () => {
+        const expectedCity = 'Pune'
+        const {searchForm} = build()
+
+        searchForm().vm.$emit('submit', expectedCity)
+
+        expect(actions.FIND_WEATHER).toHaveBeenCalled()
+        expect(actions.FIND_WEATHER.mock.calls[0][1]).toEqual({city: expectedCity})
     })
 })
