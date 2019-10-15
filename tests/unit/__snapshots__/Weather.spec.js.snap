@@ -3,5 +3,7 @@
 exports[`Weather renders the component properly 1`] = `
 <div>
   Weather
+  <searchform-stub></searchform-stub>
+  <display-stub></display-stub>
 </div>
 `;
