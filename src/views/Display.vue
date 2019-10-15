@@ -6,7 +6,14 @@
 
 <script>
     export default {
-        name: "Display"
+        name: "Display",
+        props: {
+            weather: {
+                type: Object,
+                required: true,
+                default: () => ({})
+            }
+        }
     }
 </script>
 

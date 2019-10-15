@@ -1,11 +1,22 @@
-import Weather from "@/components/Weather";
-import {shallowMount} from "@vue/test-utils";
-import SearchForm from "@/views/SearchForm";
-import Display from "@/views/Display";
+import Weather from '@/components/Weather';
+import {createLocalVue, shallowMount} from '@vue/test-utils';
+import SearchForm from '@/views/SearchForm';
+import Display from '@/views/Display';
+import initialState from '@/store/state'
+import Vuex from 'vuex'
+import weatherData from './data/weather'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('Weather', () => {
+    let state
+
     const build = () => {
-        const wrapper = shallowMount(Weather)
+        const wrapper = shallowMount(Weather, {
+            localVue,
+            store: new Vuex.Store({state})
+        })
 
         return {
             wrapper,
@@ -13,6 +24,11 @@ describe('Weather', () => {
             display: () => wrapper.find(Display)
         }
     }
+
+    beforeEach(() => {
+        state = {...initialState}
+    })
+
     it('renders the component properly', () => {
         const {wrapper} = build()
 
@@ -20,9 +36,16 @@ describe('Weather', () => {
     })
 
     it('renders the views properly', () => {
-        const { searchForm, display } = build()
+        const {searchForm, display} = build()
 
         expect(searchForm().exists()).toBeTruthy()
         expect(display().exists()).toBeTruthy()
+    })
+
+    it('passes a bound weather prop to the display component', () => {
+        state.weather = weatherData
+        const {display} = build()
+
+        expect(display().vm.weather).toBe(state.weather)
     })
 })

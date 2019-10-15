@@ -2,16 +2,23 @@
     <div>
         Weather
         <SearchForm/>
-        <Display/>
+        <Display :weather="weather"/>
     </div>
 </template>
 
 <script>
     import SearchForm from "@/views/SearchForm";
     import Display from "@/views/Display";
+    import {mapState} from "vuex";
+
     export default {
         name: "Weather",
-        components: {Display, SearchForm}
+        components: {Display, SearchForm},
+        computed: {
+            ...mapState({
+                weather: 'weather'
+            })
+        }
     }
 </script>
 
