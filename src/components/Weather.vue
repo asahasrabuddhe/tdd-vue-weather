@@ -21,7 +21,7 @@
         },
         methods: {
             findWeather(city) {
-                this.$store.dispatch('FindWeather', {city})
+                this.$store.dispatch('findWeather', {city})
             }
         }
     }

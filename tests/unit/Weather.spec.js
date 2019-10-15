@@ -58,7 +58,7 @@ describe('Weather', () => {
 
         searchForm().vm.$emit('submit', expectedCity)
 
-        expect(actions.FindWeather).toHaveBeenCalled()
-        expect(actions.FindWeather.mock.calls[0][1]).toEqual({city: expectedCity})
+        expect(actions.findWeather).toHaveBeenCalled()
+        expect(actions.findWeather.mock.calls[0][1]).toEqual({city: expectedCity})
     })
 })

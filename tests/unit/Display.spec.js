@@ -22,7 +22,7 @@ describe('Display', () => {
 
     beforeEach(() => {
         props = {
-            weather: weatherData
+            weather: weatherData.data
         }
     })
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Weather/>
   </div>
 </template>
 
@@ -13,3 +13,9 @@
   color: #2c3e50;
 }
 </style>
+<script>
+  import Weather from "@/components/Weather";
+  export default {
+    components: {Weather}
+  }
+</script>

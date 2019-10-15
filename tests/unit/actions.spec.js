@@ -18,6 +18,6 @@ describe('store actions', () => {
         await flushPromises()
 
         expect(api.findWeather).toHaveBeenCalledWith(city)
-        expect(commit).toHaveBeenCalledWith('setWeather', weatherData)
+        expect(commit).toHaveBeenCalledWith('setWeather', weatherData.data)
     })
 })
