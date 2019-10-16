@@ -1,6 +1,5 @@
 <template>
-    <div>
-        Weather
+    <div class="level">
         <SearchForm @submit="findWeather"/>
         <Display :weather="weather"/>
     </div>

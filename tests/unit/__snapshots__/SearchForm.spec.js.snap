@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchForm renders the component properly 1`] = `
-<div>
-  <form><input type="text"> <button type="submit">Find Weather</button></form>
+<div class="level-item">
+  <form class="field has-addons">
+    <p class="control"><input type="text" placeholder="Enter City" class="input"></p>
+    <p class="control"><button type="submit" class="button">Find Weather</button></p>
+  </form>
 </div>
 `;

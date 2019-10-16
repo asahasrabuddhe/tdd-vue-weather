@@ -1,13 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Display renders the component properly 1`] = `
-<div>
+<div class="level-item">
   <div class="weather">
-    <p class="city">Pune</p>
-    <p class="temp">29.87</p>
-    <p class="pressure">1010</p>
-    <p class="humidity">39</p>
-    <p class="wind"></p>
+    <p class="subtitle is-5 city">The weather in <strong>Pune</strong> is:</p> <br>
+    <p class="temp"><strong>Temperature:</strong> 29.87°C</p>
+    <p class="humidity"><strong>Humidity:</strong> 39 %</p>
+    <p class="wind"><strong>Wind Speed:</strong> 4.762 m/s</p>
   </div>
 </div>
 `;
